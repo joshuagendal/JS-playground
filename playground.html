@@ -4,13 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <title>Playground</title>
 </head>
 <body>
-    <h1>playground yeah</h1>
+    <h1 class="one">First</h1>
 <script>
-    var a = document.querySelector('h1');
-    a.style.color = 'blue';
-    
+var headerIsOrange = true;
+var h1 = document.querySelector('h1');
+var body = document.querySelector('body')  
+
+// this function below rotates between a white background w/ orange h1
+// and an orange background with black header. However when DOM
+// is initially loaded it will start with standard white background and black text
+
+setInterval(function(){
+  if (headerIsOrange) {
+    h1.style.color = 'orange';
+    body.style.background = 'white'
+    headerIsOrange = false;
+  } else {
+    h1.style.color = 'black';
+    body.style.background = 'orange';
+    headerIsOrange = true;
+  }
+}, 1500)
+
 </script>
 </html>
